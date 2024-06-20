@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormArray, FormGroup, FormControl } from '@angular/forms';
 
 import { ROLE, Role, initialRole, LANGUAGE, Language, initialLang, User } from '../../models/user';
 
@@ -23,7 +23,15 @@ export class RegistrationComponent {
       surControl: new FormControl(''),
       langControl: new FormControl(this.languages[0]),
       roleControl: new FormControl(this.roles[0]),
+      skills: new FormArray([
+        new FormControl('sdfsf'),
+        new FormControl('dsfdsfaf')
+      ])
     });
+  }
+
+  addSkill() {
+    
   }
 
   sendUserData() {

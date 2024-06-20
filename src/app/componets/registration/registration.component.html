@@ -1,15 +1,19 @@
 <div class="app__container">
   <h1>Создание пользователя</h1>
-  <form [formGroup]="registrForm" class="form__container" (ngSubmit)="sendUserData()">
-    <tui-input formControlName="nameControl">
+  <form
+    [formGroup]="registrForm"
+    class="form__container"
+    (ngSubmit)="sendUserData()">
+    <tui-input formControlName="nameControl" class="registrForm__element">
 	     Введите имя
 	     <input tuiTextfield/>
 	  </tui-input>
-    <tui-input formControlName="surControl">
+    <tui-input formControlName="surControl" class="registrForm__element">
  	    Введите фамилию
  	    <input tuiTextfield/>
  	  </tui-input>
     <tui-select
+      class="registrForm__element"
       formControlName="langControl"
       [valueContent]="langName">
 	    <tui-data-list-wrapper
@@ -22,12 +26,12 @@
     <ng-template
       #langName
       let-item>
-        <span>{{ item.label }}</span>
+      <span>{{ item.label }}</span>
     </ng-template>
     <div
       tuiGroup
-      class="group"
-      collapsed="true">
+      class="registrForm__element"
+      [collapsed]="true">
       <tui-radio-block
         *ngFor="let role of roles"
         contentAlign="right"
@@ -38,6 +42,20 @@
       </tui-radio-block>
     </div>
     <button
+      (click)="addSkill()"
+      class="registrForm__add-btn"
+      appearance="primary"
+      tuiButton
+      type="button">
+      Добавить умение
+    </button>
+    <div formArrayName="skills">
+      <div *ngFor="let skill of registrForm.controls['skills'].value">
+        dsfsf
+      </div>
+    </div>
+    <button
+      class="registrForm__create-btn"
       appearance="primary"
       tuiButton
       type="submit">

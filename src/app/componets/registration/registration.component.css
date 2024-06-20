@@ -1,6 +1,19 @@
 .form__container {
   margin-top: 24px;
   width: 504px;
-  height: 456px;
-  background-color: gray;
+  display: flex;
+  flex-direction: column;
+}
+
+.registrForm__element {
+  margin-bottom: 24px;
+}
+
+.registrForm__add-btn {
+  width: 215px;
+  margin-bottom: 24px;
+}
+
+.registrForm__create-btn {
+  width: 146px;
 }
