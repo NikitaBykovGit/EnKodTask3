@@ -17,3 +17,13 @@
 .registrForm__create-btn {
   width: 146px;
 }
+
+.registrForm__skill {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.registrForm__skill-input {
+  width: 100%;
+}

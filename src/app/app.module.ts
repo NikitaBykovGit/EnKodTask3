@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TuiInputModule, TuiDataListWrapperModule, TuiSelectModule, TuiRadioBlockModule } from '@taiga-ui/kit';
-import { TuiButtonModule, TuiDataListModule, TuiGroupModule } from '@taiga-ui/core';
+import { TuiButtonModule, TuiDataListModule, TuiGroupModule, TuiSvgModule } from '@taiga-ui/core';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './componets/registration/registration.component';
@@ -26,7 +26,8 @@ import { RegistrationComponent } from './componets/registration/registration.com
     TuiSelectModule,
 	  TuiDataListModule,
 	  TuiDataListWrapperModule,
-    TuiGroupModule
+    TuiGroupModule,
+    TuiSvgModule
 ],
   providers: [],
   bootstrap: [AppComponent]

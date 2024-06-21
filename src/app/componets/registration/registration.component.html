@@ -42,7 +42,7 @@
       </tui-radio-block>
     </div>
     <button
-      (click)="addSkill()"
+      (click)="addSkillControl()"
       class="registrForm__add-btn"
       appearance="primary"
       tuiButton
@@ -50,8 +50,18 @@
       Добавить умение
     </button>
     <div formArrayName="skills">
-      <div *ngFor="let skill of registrForm.controls['skills'].value">
-        dsfsf
+      <div class="registrForm__skill" *ngFor="let skill of registrForm.controls['skills'].value; let i = index; trackBy: trackByFn">
+        <tui-input formControlName="{{i}}" class="registrForm__skill-input">
+     	    Введите название умения
+     	    <input tuiTextfield/>
+     	  </tui-input>
+        <button
+          tuiIconButton
+          appearance="flat"
+          type="button"
+          icon="tuiIconTrash"
+          (click)="removeSkillControl(i)">
+        </button>
       </div>
     </div>
     <button
