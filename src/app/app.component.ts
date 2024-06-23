@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
         <app-registration></app-registration>
       </div>
     </tui-root>
-  `,
+  `
 })
 export class AppComponent {
   title = 'EnKodTask3';

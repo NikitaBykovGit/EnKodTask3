@@ -4,14 +4,28 @@
     [formGroup]="registrForm"
     class="form__container"
     (ngSubmit)="sendUserData()">
-    <tui-input formControlName="nameControl" class="registrForm__element">
-	     Введите имя
-	     <input tuiTextfield/>
-	  </tui-input>
-    <tui-input formControlName="surControl" class="registrForm__element">
- 	    Введите фамилию
- 	    <input tuiTextfield/>
- 	  </tui-input>
+    <div class="registrForm__element">
+      <tui-input formControlName="nameControl">
+	       Введите имя
+	    <input tuiTextfield/>
+	    </tui-input>
+      <div
+        *ngIf="registrForm.controls['nameControl'].invalid && !isSuccess"
+        class="form__error">
+        Заполните поле
+      </div>
+    </div>
+    <div class="registrForm__element">
+      <tui-input formControlName="surControl">
+ 	      Введите фамилию
+ 	      <input tuiTextfield/>
+ 	    </tui-input>
+      <div
+        *ngIf="registrForm.controls['surControl'].invalid && !isSuccess"
+        class="form__error">
+        Заполните поле
+      </div>
+    </div>
     <tui-select
       class="registrForm__element"
       formControlName="langControl"
@@ -41,14 +55,21 @@
         {{ role.label }}
       </tui-radio-block>
     </div>
-    <button
-      (click)="addSkillControl()"
-      class="registrForm__add-btn"
-      appearance="primary"
-      tuiButton
-      type="button">
-      Добавить умение
-    </button>
+    <div class="registrForm__element">
+      <button
+        (click)="addSkillControl()"
+        class="registrForm__add-btn"
+        appearance="primary"
+        tuiButton
+        type="button">
+        Добавить умение
+      </button>
+      <div
+        *ngIf="registrForm.controls['skills'].invalid && !isSuccess"
+        class="form__error">
+        Желательно не больше 3х умений
+      </div>
+    </div>
     <div formArrayName="skills">
       <div class="registrForm__skill" *ngFor="let skill of registrForm.controls['skills'].value; let i = index; trackBy: trackByFn">
         <tui-input formControlName="{{i}}" class="registrForm__skill-input">

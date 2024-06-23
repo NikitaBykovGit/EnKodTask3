@@ -11,7 +11,6 @@
 
 .registrForm__add-btn {
   width: 215px;
-  margin-bottom: 24px;
 }
 
 .registrForm__create-btn {
@@ -26,4 +25,10 @@
 
 .registrForm__skill-input {
   width: 100%;
+}
+
+.form__error {
+  color: #DD4C1E;
+  margin-top: 5px;
+  font-size: 13px;
 }
